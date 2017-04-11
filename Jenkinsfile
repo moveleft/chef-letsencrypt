@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         parallel(
           "B1": {
@@ -26,6 +26,7 @@ pipeline {
     stage('C1') {
       steps {
         echo 'a'
+        input(message: 'a', id: 'u', ok: 'oeau', submitter: 'submitter', submitterParameter: 'param')
       }
     }
   }
