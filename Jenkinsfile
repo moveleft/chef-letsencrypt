@@ -26,7 +26,8 @@ pipeline {
     stage('C1') {
       steps {
         echo 'a'
-        input(message: 'a', id: 'u', ok: 'oeau', submitter: 'submitter', submitterParameter: 'param')
+        input(message: 'a', id: 'u', ok: 'oeau', submitter: 'submitter', submitterParameter: 'param',
+             parameters:[[$class:'TextParameterDefinition', defaultValue: 'def', description: 'YOYO', name: 'RE']])
       }
     }
   }
